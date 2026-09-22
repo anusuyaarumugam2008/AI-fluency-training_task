@@ -1,12 +1,37 @@
-from chatbot import chatbot
+from agent import run_agent
 from workflow import workflow
-from agent import agent
 
-print("CHATBOT")
-print(chatbot("What is Alice attendance?"))
 
-print("\nWORKFLOW")
-print(workflow("What is Alice attendance?"))
+QUESTION = """
+I can use only 25 litres of water today.
+Should I irrigate the tomato crop, and what should I do
+based on the current farm conditions?
+"""
 
-print("\nAGENT")
-print(agent("What is Alice attendance?"))
+
+print("=" * 60)
+print("CHALLENGE QUESTION")
+print("=" * 60)
+
+print("\nQuestion:")
+print(QUESTION)
+
+print("\n--- RULE-BASED WORKFLOW ---")
+
+workflow_answer = workflow(QUESTION)
+
+print(workflow_answer)
+
+print("\n--- AI AGENT ---")
+
+agent_answer, trace = run_agent(QUESTION)
+
+print(agent_answer)
+
+print("\nTool Trace:")
+
+for item in trace:
+    print(
+        f"- {item['tool']} "
+        f"{item['arguments']}"
+    )
