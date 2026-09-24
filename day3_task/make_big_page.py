@@ -1,0 +1,146 @@
+from pathlib import Path
+
+
+html = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agriculture Assistant</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #2e7d32;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2e7d32;
+        }
+
+        .data {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .item {
+            padding: 15px;
+            background: #eef6ec;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Smart Agriculture Assistant</h1>
+    <p>AI-powered support for tomato farmers</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Farm Information</h2>
+
+        <div class="data">
+            <div class="item">
+                <strong>Crop:</strong> Tomato
+            </div>
+
+            <div class="item">
+                <strong>Growth Stage:</strong> Flowering
+            </div>
+
+            <div class="item">
+                <strong>Farm Area:</strong> 1 acre
+            </div>
+
+            <div class="item">
+                <strong>Soil Moisture:</strong> 30%
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Weather Information</h2>
+
+        <div class="data">
+            <div class="item">
+                <strong>Temperature:</strong> 31°C
+            </div>
+
+            <div class="item">
+                <strong>Humidity:</strong> 68%
+            </div>
+
+            <div class="item">
+                <strong>Rain Probability:</strong> 70%
+            </div>
+
+            <div class="item">
+                <strong>Expected Rainfall:</strong> 12 mm
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>AI Assistant</h2>
+
+        <p>
+            The assistant can use farm data, weather information,
+            crop information and calculations to help answer farmer questions.
+        </p>
+
+        <p>
+            Example:
+            "The soil moisture is 30% and rain is expected soon.
+            Should I irrigate?"
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    Smart Agriculture Assistant
+</footer>
+
+</body>
+</html>
+"""
+
+
+Path("big.html").write_text(html, encoding="utf-8")
+
+print("big.html created successfully.")
